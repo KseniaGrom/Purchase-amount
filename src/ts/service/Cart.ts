@@ -21,9 +21,6 @@ export default class Cart {
     }
 
     removeItemById(id: number): void {
-        const index = this._items.findIndex(item => item.id === id);
-        if (index !== -1) {
-            this._items.splice(index, 1);
-        }
+    this._items = this._items.filter(item => item.id !== id);
     }
 }
